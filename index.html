@@ -91,7 +91,7 @@ const cart={};
 const money=n=>"RM"+n.toFixed(2);
 document.getElementById("products").innerHTML=products.map(p=>`
  <article class="product">
-  <div class="product-art"><img src="${p.id}.jpg" alt="${p.name} candle" style="width:100%;height:220px;object-fit:contain;border-radius:12px;"></div>
+  <div class="product-art"><img src="./${p.id}.jpg" alt="${p.name} candle" style="width:100%;height:220px;object-fit:contain;border-radius:12px;"></div>
   <h3>${p.name}</h3><div class="notes">${p.scent} — ${p.notes}</div>
   <div class="meta">100g · Approx. 25 hours</div><div class="price">${money(p.price)}</div>
   <button class="add" onclick="addToCart('${p.id}')">ADD TO BAG</button>
