@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumière Candle Co. | Botanical Soy Candles</title>
+<style>
+:root{--ink:#292720;--muted:#777468;--cream:#f8f5ee;--paper:#fffdf8;--sage:#7a8068;--line:#e6e0d5;--gold:#b08d57}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit}.announcement{background:#35382e;color:#fff;text-align:center;padding:10px 14px;font-size:12px;letter-spacing:.08em}
+header{display:flex;justify-content:space-between;align-items:center;padding:22px max(5vw,20px);border-bottom:1px solid var(--line);background:var(--paper)}
+.brand{font-family:Georgia,serif;font-size:25px;letter-spacing:.04em}.brand small{display:block;font:10px Arial,sans-serif;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.cart-button{border:1px solid var(--ink);padding:10px 15px;background:transparent;cursor:pointer}
+.hero{padding:76px 7vw 68px;background:linear-gradient(110deg,#e8e4d7,#f8f5ee 58%,#d9d7c7);display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;color:var(--sage);font-size:11px;font-weight:bold}
+h1{font:clamp(42px,6vw,76px)/1.04 Georgia,serif;font-weight:normal;margin:18px 0}
+.hero p{max-width:480px;line-height:1.8;color:#5e5b51}
+.cta{display:inline-block;background:var(--ink);color:white;text-decoration:none;padding:14px 22px;margin-top:14px;font-size:12px;letter-spacing:.08em}
+.hero-art{min-height:290px;display:flex;align-items:center;justify-content:center;position:relative}
+.candle{width:190px;height:230px;border-radius:24px 24px 35px 35px;background:linear-gradient(90deg,#9b704c,#c09a72 35%,#8f6546 85%);box-shadow:25px 25px 40px #847b6544;position:relative;display:flex;align-items:center;justify-content:center}
+.candle:before{content:"";position:absolute;top:-5px;left:8px;right:8px;height:18px;border-radius:50%;background:#e6d7bc;border:2px solid #8f6546}
+.candle-label{background:#f2eadb;color:#4b4a3d;text-align:center;padding:20px 9px;width:130px;font:16px Georgia,serif;letter-spacing:.04em}
+.candle-label small{display:block;font:8px Arial,sans-serif;letter-spacing:.16em;margin-top:8px}
+.flame{position:absolute;top:-39px;width:17px;height:31px;background:#d8a45c;border-radius:90% 10% 70% 40%;transform:rotate(8deg);box-shadow:0 0 30px #d9a45c88}
+section{padding:64px 7vw}.section-head{text-align:center;margin-bottom:34px}.section-head h2{font:38px Georgia,serif;font-weight:normal;margin:10px 0}.section-head p{color:var(--muted);line-height:1.6}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.product{background:var(--paper);border:1px solid var(--line);padding:14px}
+.product-art{height:190px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e4e0d4,#f4eee1);margin-bottom:16px}
+.mini-jar{width:88px;height:116px;border-radius:13px 13px 19px 19px;background:linear-gradient(90deg,#936e4c,#c39d73,#8c6749);display:flex;align-items:center;justify-content:center;box-shadow:10px 12px 15px #5c4c2d22}
+.mini-label{background:#f4ead7;width:62px;text-align:center;padding:12px 2px;font:10px Georgia,serif}
+.product h3{font:20px Georgia,serif;font-weight:normal;margin:0 0 7px}.notes{font-size:12px;color:var(--muted);min-height:32px;line-height:1.5}
+.meta{font-size:11px;color:var(--muted);margin:12px 0}.price{font-weight:bold;margin:8px 0 13px}
+.add{width:100%;border:0;background:var(--sage);color:white;padding:12px;cursor:pointer;letter-spacing:.04em}.add:hover,.cta:hover{opacity:.88}
+.details{background:#eeece2;display:grid;grid-template-columns:repeat(3,1fr);gap:25px;text-align:center}.details h3{font:22px Georgia,serif;font-weight:normal}.details p{color:var(--muted);font-size:13px;line-height:1.7}
+.cart-panel{display:none;position:fixed;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--paper);z-index:5;box-shadow:-10px 0 40px #0002;padding:24px;overflow:auto}.cart-panel.open{display:block}.cart-top{display:flex;justify-content:space-between;align-items:center}.cart-top h2{font:28px Georgia,serif;font-weight:normal}.close{border:0;background:none;font-size:24px;cursor:pointer}.cart-line{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line);padding:14px 0;font-size:14px}.qty button{border:1px solid var(--line);background:white;padding:3px 8px;cursor:pointer}.totals{margin-top:22px;display:flex;justify-content:space-between;font-weight:bold}.checkout{width:100%;margin-top:20px;padding:14px;background:#b8b6a3;border:0;color:#292720;font-weight:bold;cursor:not-allowed}.notice{font-size:12px;line-height:1.6;color:var(--muted);background:#f1eee6;padding:12px;margin-top:12px}
+footer{padding:30px 7vw;background:#35382e;color:#f8f5ee;text-align:center;font-size:12px;line-height:1.8}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr;padding-top:48px}.hero-art{min-height:250px}.details{grid-template-columns:1fr}}
+@media(max-width:480px){header{padding:18px}.brand{font-size:20px}.products{gap:10px}.product{padding:9px}.product-art{height:145px}.mini-jar{transform:scale(.82)}section{padding:48px 5vw}.hero{padding-left:6vw;padding-right:6vw}}
+</style>
+</head>
+<body>
+<div class="announcement">BOTANICAL CALM, DELIVERED TO YOUR DOOR · FREE DELIVERY ABOVE RM50</div>
+<header>
+  <div class="brand">Lumière Candle Co.<small>Botanical soy wax candles</small></div>
+  <button class="cart-button" onclick="toggleCart(true)">Bag (<span id="cart-count">0</span>)</button>
+</header>
+<main>
+  <div class="hero">
+    <div>
+      <div class="eyebrow">A little ritual of calm</div>
+      <h1>Light your<br>moment of peace.</h1>
+      <p>Discover botanical-inspired soy wax candles designed to bring a warm glow and a considered touch to your everyday spaces.</p>
+      <a class="cta" href="#shop">EXPLORE THE SCENTS</a>
+    </div>
+    <div class="hero-art" aria-label="Illustration of an amber candle jar">
+      <div class="candle"><div class="flame"></div><div class="candle-label">Lumière<small>BOTANICAL SOY CANDLE</small></div></div>
+    </div>
+  </div>
+  <section id="shop">
+    <div class="section-head"><div class="eyebrow">The scent portfolio</div><h2>Find your atmosphere</h2><p>100g natural soy wax · Approx. 25-hour burn time · RM10 each</p></div>
+    <div class="products" id="products"></div>
+  </section>
+  <section class="details">
+    <div><h3>Botanical-inspired</h3><p>Four scent profiles to suit your mood, from fresh citrus notes to soft floral aromas.</p></div>
+    <div><h3>Thoughtful details</h3><p>Amber-glass styling designed to complement desks, bedrooms and relaxed living spaces.</p></div>
+    <div><h3>Delivery in Malaysia</h3><p>Orders will be packed carefully. Courier and tracking details should be shared after dispatch.</p></div>
+  </section>
+</main>
+<footer>
+  <strong>Lumière Candle Co.</strong><br>
+  Botanical soy wax candles · Malaysia<br>
+  Contact: add your group's official business email or social media handle here.<br>
+  <span>Student project storefront prototype. Payment checkout must be connected before accepting real orders.</span>
+</footer>
+<aside class="cart-panel" id="cart-panel" aria-label="Shopping bag">
+  <div class="cart-top"><h2>Your bag</h2><button class="close" onclick="toggleCart(false)" aria-label="Close bag">×</button></div>
+  <div id="cart-items"></div>
+  <div class="totals"><span>Subtotal</span><span id="subtotal">RM0.00</span></div>
+  <div class="notice" id="delivery-note">Add products to see your delivery offer. Free delivery applies to orders above RM50, according to the proposed store policy.</div>
+  <button class="checkout" disabled>Checkout — gateway setup required</button>
+  <div class="notice">This starter version is a storefront prototype. It does not collect customer details or process payments yet. Connect a secure payment gateway and server-side order handling before launch.</div>
+</aside>
+<script>
+const products = [
+ {id:"purify",name:"Purify",scent:"Lime & Basil",notes:"Citrus top notes, spicy basil and vetiver.",price:10},
+ {id:"soothe",name:"Soothe",scent:"Tuscan Lavender",notes:"Lavender with fresh juniper notes.",price:10},
+ {id:"romantic",name:"Romantic",scent:"Rose Garden",notes:"Rose, lily-of-the-valley and elegant musk.",price:10},
+ {id:"refresh",name:"Refresh",scent:"Sea Salt & Wood Sage",notes:"Fresh green notes, sea salt and woody sage.",price:10}
+];
+const cart={};
+const money=n=>"RM"+n.toFixed(2);
+document.getElementById("products").innerHTML=products.map(p=>`
+ <article class="product">
+  <div class="product-art" aria-hidden="true"><div class="mini-jar"><div class="mini-label">Lumière<br><small>${p.name.toUpperCase()}</small></div></div></div>
+  <h3>${p.name}</h3><div class="notes">${p.scent} — ${p.notes}</div>
+  <div class="meta">100g · Approx. 25 hours</div><div class="price">${money(p.price)}</div>
+  <button class="add" onclick="addToCart('${p.id}')">ADD TO BAG</button>
+ </article>`).join("");
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();toggleCart(true)}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function renderCart(){
+ const count=Object.values(cart).reduce((a,b)=>a+b,0);
+ const total=products.reduce((s,p)=>s+p.price*(cart[p.id]||0),0);
+ document.getElementById("cart-count").textContent=count;
+ document.getElementById("subtotal").textContent=money(total);
+ document.getElementById("cart-items").innerHTML=count?products.filter(p=>cart[p.id]).map(p=>`
+  <div class="cart-line"><div><strong>${p.name}</strong><br><small>${p.scent}</small><br>${money(p.price)} each</div>
+  <div class="qty"><button onclick="changeQty('${p.id}',-1)">−</button> ${cart[p.id]} <button onclick="changeQty('${p.id}',1)">+</button></div></div>`).join(""):"<p>Your bag is empty. Add a scent to get started.</p>";
+ document.getElementById("delivery-note").textContent=count?(total>50?"Your order qualifies for free delivery under the proposed RM50 threshold.":"Add "+money(50-total+0.01)+" more to reach RM50 and qualify for free delivery under the proposed store policy."):"Add products to see your delivery offer.";
+}
+function toggleCart(open){document.getElementById("cart-panel").classList.toggle("open",open)}
+renderCart();
+</script>
+</body>
+</html>
